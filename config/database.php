@@ -78,7 +78,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'moz753kou',
+		'password' => '',
 		'database' => 'pmp',
 		'prefix' => '',
 		'encoding' => 'utf8',
