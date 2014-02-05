@@ -1,0 +1,1 @@
+<?php echo $this->Html->link('-odkaz-', '/content/view/'.$link);?>

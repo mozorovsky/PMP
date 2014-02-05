@@ -1,0 +1,39 @@
+		function ajaxFileUpload(action, fileId, returnDiv, deltanumber)
+	{
+		$("#loading")
+		.ajaxStart(function(){
+			$(this).show();
+		})
+		.ajaxComplete(function(){
+			$(this).hide();
+		});
+
+		$.ajaxFileUpload
+		(
+			{
+				url:action,
+				secureuri:false,
+				fileElementId:fileId,				
+				dataType: 'xml',
+				data:{'data[delta]':deltanumber},
+				success: function (data, status) {
+					//alert(data.body.innerHTML);
+					$("#" + returnDiv).html(data.body.innerHTML);
+					//alert(data.body.innerText);
+					if(typeof(data.error) != 'undefined') {
+						if(data.error != '') {
+							alert(data.error);
+						}else {
+							alert(data.msg);
+						}
+					}
+				},
+				error: function (data, status, e)	{
+					alert(e);
+				}
+			}
+		)
+		
+		return false;
+
+	}
